@@ -1,8 +1,7 @@
-// Service classes are not decorated with any decorator 
-// we can also write any other subscription related services here
+// Remember that angular always create a constructor (parameter-less constructor)
 export  class SubscribeService{
-
-
+  // this constructor gets called to instiatiate it whevere it's created
+  constructor(){}
   OnSubscribeClicked(){
     // Add USER TO DATABASE
 
