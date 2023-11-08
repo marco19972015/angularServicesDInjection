@@ -1,3 +1,6 @@
+import { Injectable } from "@angular/core";
+
+@Injectable()
 // Remember that angular always create a constructor (parameter-less constructor)
 export  class SubscribeService{
   // this constructor gets called to instiatiate it whevere it's created
