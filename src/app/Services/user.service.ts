@@ -1,25 +1,29 @@
-// In order to use the User class we need to import it (our structure)
 import { User } from "src/Models/User";
+import { LoggerService } from "./logger.service";
+import { Injectable } from "@angular/core";
 
+// 2. also need to tell angular WHAT to inject. We use decorators to tell angular to do somethig 
+// 3. Here we will use the @Injectable decorator, this @Injectable tells angular something can be injected in the service class
+// we use the Injectable decorator where we want to inject a service
+// 4. We then need to provide this service in the module class providers array so we have the same instance in all the components.
+@Injectable()
 export class UserService {
-    // create a prop of type User array class (our model) 
     users: User[] = [
-        // instanciate new instances of users (hard coded)
         new User('Steve Smith', 'Male', 'Monthly', 'Active'),
         new User('Mary Jane', 'Female', 'Yearly', 'Inactive'),
         new User('Mark Tyler', 'Male', 'Quaterly', 'Active')
     ];
 
-    // Create a method that gets all the users
-    getAllUsers() {
-        return this.users;
-    }
+    //1. we need to TELL angular how to inject the logger service
+    constructor(private logger: LoggerService){}
 
-    // Create a method that creates a user
+    getAllUsers() { return this.users; }
+
     CreateUser(name: string, gender: string, subType: string, status: string){
-        // line 21 returns us a new user with these values
         let user = new User(name, gender, subType, status);
-        // Using the push method we can add the user array to our users array
         this.users.push(user);
+
+        // let looger = new LoggerService(); // this is tightly coupled
+        this.logger.LogMessage(name, status)
     }
 }
