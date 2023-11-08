@@ -2,7 +2,7 @@
 import { User } from "src/Models/User";
 
 export class UserService {
-    // create a prop of type User class (our model)
+    // create a prop of type User array class (our model) 
     users: User[] = [
         // instanciate new instances of users (hard coded)
         new User('Steve Smith', 'Male', 'Monthly', 'Active'),
