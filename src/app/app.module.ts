@@ -11,6 +11,7 @@ import { UserListComponent } from './header/admin/user-list/user-list.component'
 import { FormsModule } from '@angular/forms';
 import { UserDetailComponent } from './header/admin/user-detail/user-detail.component';
 import { SubscribeService } from './Services/subscribe.service';
+import { UserService } from './Services/user.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SubscribeService } from './Services/subscribe.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [SubscribeService],
+  providers: [SubscribeService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
