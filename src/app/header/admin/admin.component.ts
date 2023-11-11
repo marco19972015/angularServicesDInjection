@@ -8,7 +8,7 @@ import { UserService } from 'src/app/Services/user.service';
 export class AdminComponent {
   // In this component we will be adding the new users
 
-  constructor(private userService: UserService){}
+  constructor(@Inject('USER_SERVICE') private userService: UserService){}
 
   name: string = '';
   gender: string = 'Male';

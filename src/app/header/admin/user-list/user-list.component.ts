@@ -7,7 +7,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class UserListComponent {
   // here we want to use user list class from our service
-  constructor(private userService: UserService){}  // we inject using the contructor
+  constructor(@Inject('USER_SERVICE') private userService: UserService){}  // we inject using the contructor
 
 
   userList = this.userService.getAllUsers();
