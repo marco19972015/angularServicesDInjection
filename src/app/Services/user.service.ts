@@ -23,7 +23,8 @@ export class UserService {
         this.logger.LogMessage(name, status)
     }
 
-    // 1. Create an event of type user
+    // 1. Create an event of type user 
+    // this is done so when the user clicks the event we want to emit (pass) data
     OnUserDetailsClick: EventEmitter<User> = new EventEmitter<User>();
 
     // 2. We now emit that event using onShowUserDetails method
